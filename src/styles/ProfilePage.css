@@ -1,0 +1,31 @@
+.profile-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .user-profile {
+    margin-top: 20px;
+  }
+  
+  .user-profile h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile p {
+    margin: 5px 0;
+  }
+  
+  .user-profile strong {
+    font-weight: bold;
+  }
+  
+  /* You can add more styling as needed */
+  
