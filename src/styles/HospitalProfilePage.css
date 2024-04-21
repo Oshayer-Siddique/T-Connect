@@ -1,0 +1,62 @@
+.navbar {
+    background-color: #222;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #444;
+  }
+  
+  .profile-container {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .user-profile {
+    margin-top: 20px;
+  }
+  
+  .user-profile h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile p {
+    margin: 5px 0;
+  }
+  
+  .user-profile strong {
+    font-weight: bold;
+  }
+  
+  

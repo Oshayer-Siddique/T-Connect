@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
-import '../styles/LoginPage.css';
+import '../styles/DoctorLoginPage.css';
 
-function LoginPage() {
+function DoctorLoginPage() {
     const [userId, setUserId] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -37,7 +37,7 @@ function LoginPage() {
                 <h2>Login</h2>
                 {error && <div className="error-message">{error}</div>}
                 <div className="form-group">
-                    <label htmlFor="userId">User ID</label>
+                    <label htmlFor="userId">Doctor ID</label>
                     <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} />
                 </div>
                 <div className="form-group">
@@ -49,13 +49,12 @@ function LoginPage() {
 
         </div>
 
-            <div className="registration-link">
+            {/* <div className="registration-link">
                 <p>Don't have an account? <Link to="/registration">Register here</Link></p>
-            </div>
+            </div> */}
 
         </div>
     );
 }
 
-export default LoginPage;
-
+export default DoctorLoginPage;

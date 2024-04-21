@@ -11,7 +11,7 @@ function ProfilePage() {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/tocnnect/patientprofile/${userId}`);
+                const response = await axios.get(`http://localhost:5000/tconnect/patientprofile/${userId}`);
                 setUser(response.data.user);
             } catch (error) {
                 setError('Error fetching user profile');

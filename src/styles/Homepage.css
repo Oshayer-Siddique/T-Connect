@@ -1,0 +1,36 @@
+.home-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.option {
+    flex-basis: 30%; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.option a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.option:hover a {
+    color: #007bff;
+}
