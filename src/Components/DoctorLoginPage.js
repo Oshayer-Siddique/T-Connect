@@ -13,12 +13,12 @@ function DoctorLoginPage() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/tconnect/patientlogin', { userId, password });
+            const response = await axios.post('http://localhost:5000/tconnect/doctorlogin', { userId, password });
 
             if (response.status === 200) {
                 // Redirect to profile page upon successful login
                 console.log('Login successful. Response data:', response.data);
-                navigate(`/profile/${userId}`);
+                navigate(`/profiled/${userId}`);
             }
         } catch (error) {
             if (error.response && error.response.status === 401) {
