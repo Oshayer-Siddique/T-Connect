@@ -6,6 +6,9 @@ import '../styles/DoctorProfilePage.css'; // Import CSS file for styling
 function DoctorProfilePage() {
     const { userId } = useParams();
     const [doctor, setDoctor] = useState(null);
+    const [id, setId] = useState('');
+    const [patient, setPatient] = useState(null);
+
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -20,6 +23,19 @@ function DoctorProfilePage() {
 
         fetchDoctorProfile();
     }, [userId]);
+
+
+    const handleSearch = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/tconnect/patientsearch', { _id: id });
+            setPatient(response.data);
+            setError('');
+        } catch (error) {
+            setPatient(null);
+            setError('Patient not found');
+        }
+    };
+
 
     return (
         <div>
@@ -42,6 +58,28 @@ function DoctorProfilePage() {
                     </div>
                 )}
             </div>
+
+
+            <div>
+            <h2>Patient Search</h2>
+            <input
+                type="text"
+                placeholder="Enter patient ID"
+                value={id}
+                onChange={(e) => setId(e.target.value)}
+            />
+            <button onClick={handleSearch}>Search</button>
+
+            {error && <div>{error}</div>}
+            {patient && (
+                <div>
+                    <h3>Patient Details</h3>
+                    <p><strong>Name:</strong> {patient.name}</p>
+                    <p><strong>Email:</strong> {patient.email}</p>
+                    {/* Display additional patient details here */}
+                </div>
+            )}
+        </div>
 
 
 
