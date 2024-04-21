@@ -17,6 +17,8 @@ function RegistrationForm() {
         emergencycont: ''
     });
     const [error, setError] = useState('');
+    const [userId, setUserId] = useState(null); // State to store user ID
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,11 +28,14 @@ function RegistrationForm() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/register', formData);
+            const response = await axios.post('http://localhost:5000/tconnect/patientregister', formData);
 
             if (response.status === 201) {
+
+                const { userId } = response.data;
+                setUserId(userId);
                 // Registration successful, do something
-                console.log('Registration successful.');
+                console.log('Registration successful. User ID:', userId);
             }
         } catch (error) {
             // Handle error
@@ -41,6 +46,9 @@ function RegistrationForm() {
 
     return (
         <div className="registration-container">
+
+ 
+            
             <form onSubmit={handleSubmit} className="registration-form">
                 <h2>Registration</h2>
                 {error && <div className="error-message">{error}</div>}
@@ -95,6 +103,13 @@ function RegistrationForm() {
                 </div>
                 <button type="submit" className="register-btn">Register</button>
             </form>
+
+            {userId && (
+                <div className="user-id-section">
+                    <h3>User ID:</h3>
+                    <p>{userId}</p>
+                </div>
+            )}
         </div>
     );
     
