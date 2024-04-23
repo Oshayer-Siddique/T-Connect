@@ -26,6 +26,8 @@ function AdminProfilePage() {
             <nav className="navbar">
                 <ul>
                     <li><Link to={`/profilea/${userId}`}>Profile</Link></li>
+                    <li><Link to={`/add-hospital/${userId}`}>Add Hospital</Link></li>
+
 
                 </ul>
             </nav>
@@ -33,7 +35,7 @@ function AdminProfilePage() {
                 {error && <div className="error-message">{error}</div>}
                 {user && (
                     <div className="user-profile">
-                        <h2>User Profile</h2>
+                        <h2>Admin Profile</h2>
                         <p><strong>Name:</strong> {user.name}</p>
                         <p><strong>Email:</strong> {user.email}</p>
 

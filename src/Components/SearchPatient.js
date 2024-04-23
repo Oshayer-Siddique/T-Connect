@@ -60,6 +60,13 @@ function SearchPatient(){
                     <h3>Patient Details</h3>
                     <p><strong>Name:</strong> {patient.name}</p>
                     <p><strong>Email:</strong> {patient.email}</p>
+                    <p><strong>Phone:</strong> {patient.phone}</p>
+                    <p><strong>Gender:</strong> {patient.gender}</p>
+                    <p><strong>Age:</strong> {patient.age}</p>
+                    <p><strong>Blood:</strong> {patient.blood}</p>
+                    <p><strong>Disease:</strong> {patient.Disease}</p>
+                    <p><strong>Allergies:</strong> {patient.Allergies}</p>
+
                     {/* Display additional patient details here */}
                     <Link to={`/get-files/${id}`}><button>Get Files</button></Link>
 

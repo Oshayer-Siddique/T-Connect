@@ -17,7 +17,9 @@ import UploadFile from "./Components/UploadFile";
 import GetFiles from "./Components/GetFiles";
 import AdminLoginPage from "./Components/AdminLoginPage";
 import AdminProfilePage from "./Components/AdminProfilePage";
-import SearchPatient from "./Components/SearchPatient"
+import SearchPatient from "./Components/SearchPatient";
+import AdminRegPage from "./Components/AdminRegPage"
+import HospitalReg from "./Components/HospitalReg";
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -43,10 +45,8 @@ function App() {
             <Route path="/admin" element={<AdminLoginPage/>} />
             <Route path="/profilea/:userId" element={<AdminProfilePage/>} />
             <Route path="/search/:userId" element={<SearchPatient/>} />
-
-
-
-            
+            <Route path="/adminreg" element={<AdminRegPage/>} />
+            <Route path="/add-hospital/:userId" element={<HospitalReg/>} />
 
 
             </Routes>

@@ -6,7 +6,8 @@
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
   animation: fadeIn 0.5s ease-in-out; /* Fade in animation */
-  position: relative; /* Ensure the container's position is relative */
+  position: relative;
+  left: 10%; /* Ensure the container's position is relative */
 }
 
 /* Animation keyframes for fading in */

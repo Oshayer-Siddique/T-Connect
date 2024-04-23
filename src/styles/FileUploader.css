@@ -16,6 +16,9 @@
     background-color: #f7f7f7;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+    position: relative;
+    left: 190%;
+
   }
   
   .drop-area:hover {

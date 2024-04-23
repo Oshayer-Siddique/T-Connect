@@ -61,9 +61,13 @@ function DoctorProfilePage() {
                 {error && <div className="error-message">{error}</div>}
                 {doctor && (
                     <div className="user-profile">
-                        <h2>User Profile</h2>
+                        <h2>Doctor Profile</h2>
                         <p><strong>Name:</strong> {doctor.name}</p>
                         <p><strong>Email:</strong> {doctor.email}</p>
+                        <p><strong>Phone:</strong> {doctor.phone}</p>
+                        <p><strong>Gender:</strong> {doctor.gender}</p>
+                        <p><strong>Speacialist:</strong> {doctor.specialized}</p>
+
                         
                     </div>
                 )}

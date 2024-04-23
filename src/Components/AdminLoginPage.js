@@ -32,12 +32,20 @@ function AdminLoginPage() {
     return (
         <div>
 
+    <div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle medium shade4"></div>
+        <div class="circle small shade5"></div>
+      </div>
+
         <div className="login-container">
             <form onSubmit={handleLogin} className="login-form">
-                <h2>Login</h2>
+                <h2>Admin Login</h2>
                 {error && <div className="error-message">{error}</div>}
                 <div className="form-group">
-                    <label htmlFor="userId">User ID</label>
+                    <label htmlFor="userId">Admin ID</label>
                     <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} />
                 </div>
                 <div className="form-group">
@@ -50,7 +58,7 @@ function AdminLoginPage() {
         </div>
 
         <div className="registration-link">
-                <p>Don't have an account? <Link to="/registration">Register here</Link></p>
+                <p>Don't have an account? <Link to="/adminreg">Register here</Link></p>
             </div>
 
         </div>

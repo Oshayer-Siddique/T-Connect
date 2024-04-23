@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/MyDocumentsPage.css'
+import { Link, useParams } from 'react-router-dom';
+
 
 const MyDocumentsPage = () => {
+  const { userId } = useParams();
+
   const [files, setFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,6 +44,16 @@ const MyDocumentsPage = () => {
 
   return (
     <div>
+
+          <nav className="navbar">
+                <ul>
+                    <li><Link to={`/profile/${userId}`}>Profile</Link></li>
+                    <li><Link to={`/my-documents/${userId}`}>My Documents</Link></li>
+                    <li><Link to={`/add-document/${userId}`}>Add Document</Link></li>
+                </ul>
+            </nav>
+
+
       <h2>Download Files</h2>
       {loading && <p>Loading...</p>}
       {!loading && (
