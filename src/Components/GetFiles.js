@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/MyDocumentsPage.css'
 
-const MyDocumentsPage = () => {
+const GetFiles = () => {
   const [files, setFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -55,4 +55,5 @@ const MyDocumentsPage = () => {
   );
 };
 
-export default MyDocumentsPage;
+export default GetFiles;
+

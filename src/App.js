@@ -13,11 +13,13 @@ import HospitalProfilePage from "./Components/HospitalProfilePage";
 import AddDoctor from "./Components/AddDoctor";
 import DoctorsList from "./Components/DoctorsList";
 import DoctorProfilePage from "./Components/DoctorProfilePage";
-
+import UploadFile from "./Components/UploadFile";
+import GetFiles from "./Components/GetFiles";
+import AdminLoginPage from "./Components/AdminLoginPage";
+import AdminProfilePage from "./Components/AdminProfilePage";
+import SearchPatient from "./Components/SearchPatient"
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
-
 
 
 function App() {
@@ -30,13 +32,22 @@ function App() {
             <Route path="/doctor" element={<DoctorLoginPage/>} />
             <Route path="/hospital" element={<HospitalLoginPage/>} />
             <Route path="/registration" element={<RegistrationForm/>} />
-
             <Route path="/profile/:userId" element={<ProfilePage/>} />
             <Route path="/my-documents/:userId" element={<MyDocumentsPage/>} />
             <Route path="/add-doctor/:userId" element={<AddDoctor/>} />
             <Route path="/doctor-list/:userId" element={<DoctorsList/>} />
             <Route path="/profileh/:userId" element={<HospitalProfilePage/>} />
             <Route path="/profiled/:userId" element={<DoctorProfilePage/>} />
+            <Route path="/add-document/:userId" element={<FileUploader/>} />
+            <Route path="/get-files/:id" element={<GetFiles/>} />
+            <Route path="/admin" element={<AdminLoginPage/>} />
+            <Route path="/profilea/:userId" element={<AdminProfilePage/>} />
+            <Route path="/search/:userId" element={<SearchPatient/>} />
+
+
+
+            
+
 
             </Routes>
         </BrowserRouter>

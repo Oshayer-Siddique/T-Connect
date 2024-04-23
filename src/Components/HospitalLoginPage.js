@@ -1,61 +1,80 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import '../styles/HospitalLoginPage.css';
+import "../styles/HospitalLoginPage.css";
 
 function HospitalLoginPage() {
-    const [userId, setUserId] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    let navigate = useNavigate();
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  let navigate = useNavigate();
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-        try {
-            const response = await axios.post('http://localhost:5000/tconnect/hospitallogin', { userId, password });
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/tconnect/hospitallogin",
+        { userId, password }
+      );
 
-            if (response.status === 200) {
-                // Redirect to profile page upon successful login
-                console.log('Login successful. Response data:', response.data);
-                navigate(`/profileh/${userId}`);
-            }
-        } catch (error) {
-            if (error.response && error.response.status === 401) {
-                setError('Invalid userId or password');
-            } else {
-                setError('An error occurred. Please try again later.');
-            }
-        }
-    };
+      if (response.status === 200) {
+        // Redirect to profile page upon successful login
+        console.log("Login successful. Response data:", response.data);
+        navigate(`/profileh/${userId}`);
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setError("Invalid userId or password");
+      } else {
+        setError("An error occurred. Please try again later.");
+      }
+    }
+  };
 
-    return (
-        <div>
+  return (
+    <div>
+      <div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle medium shade4"></div>
+        <div class="circle small shade5"></div>
+      </div>
 
-        <div className="login-container">
-            <form onSubmit={handleLogin} className="login-form">
-                <h2>Login</h2>
-                {error && <div className="error-message">{error}</div>}
-                <div className="form-group">
-                    <label htmlFor="userId">Hospital ID</label>
-                    <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button type="submit" className="login-btn">Login</button>
-            </form>
+      <div className="login-container">
+        <form onSubmit={handleLogin} className="login-form">
+          <h2>Hospital Login</h2>
+          {error && <div className="error-message">{error}</div>}
+          <div className="form-group">
+            <label htmlFor="userId">Hospital ID</label>
+            <input
+              type="text"
+              id="userId"
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="login-btn">
+            Login
+          </button>
+        </form>
+      </div>
 
-        </div>
-
-            {/* <div className="registration-link">
+      {/* <div className="registration-link">
                 <p>Don't have an account? <Link to="/registration">Register here</Link></p>
             </div> */}
-
-        </div>
-    );
+    </div>
+  );
 }
 
 export default HospitalLoginPage;
-

@@ -1,70 +1,83 @@
-/* DoctorProfilePage.css */
-
 .profile-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto; /* Adjust margin to position it vertically */
+  padding: 20px;
+  border: 1px solid #956e6e;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
+  animation: fadeIn 0.5s ease-in-out; /* Fade in animation */
+  position: relative; /* Ensure the container's position is relative */
+}
+
+/* Animation keyframes for fading in */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px); /* Start slightly above its final position */
   }
-  
-  .loading-message,
-  .error-message {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 4px;
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Move to final position */
   }
-  
-  .loading-message {
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  
-  .error-message {
-    background-color: #ffcccc;
-    color: #990000;
-  }
-  
-  .user-profile {
-    margin-top: 20px;
-  }
-  
-  .user-profile h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .user-profile p {
-    margin-bottom: 8px;
-  }
-  
-  .user-profile p strong {
-    font-weight: bold;
-  }
-  
-  /* Optional: Style navigation links */
-  .navbar {
-    margin-bottom: 20px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .navbar ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .navbar ul li a:hover {
-    text-decoration: underline;
-    color: #007bff;
-  }
-  
+}
+
+.loading-message,
+.error-message {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.loading-message {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.error-message {
+  background-color: #ffcccc;
+  color: #990000;
+}
+
+.user-profile {
+  margin-top: 20px;
+}
+
+.user-profile h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.user-profile p {
+  margin-bottom: 8px;
+}
+
+.user-profile p strong {
+  font-weight: bold;
+}
+
+/* Optional: Style navigation links */
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #e8dddd;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+

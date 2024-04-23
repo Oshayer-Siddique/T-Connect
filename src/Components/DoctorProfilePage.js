@@ -8,7 +8,6 @@ function DoctorProfilePage() {
     const [doctor, setDoctor] = useState(null);
     const [id, setId] = useState('');
     const [patient, setPatient] = useState(null);
-
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -36,16 +35,27 @@ function DoctorProfilePage() {
         }
     };
 
+    const handleRequest = async () => {
+        try {
+            const response = await axios.post('http://localhost:5000/tconnect/patientsearch', { _id: id });
+            setPatient(response.data);
+            setError('');
+        } catch (error) {
+            setPatient(null);
+            setError('Patient not found');
+        }
+    };
+
 
     return (
         <div>
-            {/* <nav className="navbar">
+            <nav className="navbar">
                 <ul>
                     <li><Link to={`/profiled/${userId}`}>Profile</Link></li>
-                    <li><Link to={`/doctor-list/${userId}`}>List of Doctor</Link></li>
-                    <li><Link to={`/add-doctor/${userId}`}>Add Doctor</Link></li>
+                    <li><Link to={`/search/${userId}`}>Search Patient</Link></li>
+
                 </ul>
-            </nav> */}
+            </nav>
 
             <div className="profile-container">
                 {error && <div className="error-message">{error}</div>}
@@ -61,26 +71,13 @@ function DoctorProfilePage() {
 
 
             <div>
-            <h2>Patient Search</h2>
-            <input
-                type="text"
-                placeholder="Enter patient ID"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-            />
-            <button onClick={handleSearch}>Search</button>
 
-            {error && <div>{error}</div>}
-            {patient && (
-                <div>
-                    <h3>Patient Details</h3>
-                    <p><strong>Name:</strong> {patient.name}</p>
-                    <p><strong>Email:</strong> {patient.email}</p>
-                    {/* Display additional patient details here */}
-                </div>
-            )}
+
+
+
+
         </div>
-
+            
 
 
 

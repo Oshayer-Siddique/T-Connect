@@ -35,7 +35,7 @@ function HospitalProfilePage() {
                 {error && <div className="error-message">{error}</div>}
                 {hospital && (
                     <div className="user-profile">
-                        <h2>User Profile</h2>
+                        <h2>Hospital Profile</h2>
                         <p><strong>Name:</strong> {hospital.name}</p>
                         <p><strong>Email:</strong> {hospital.email}</p>
                         <p><strong>Phone:</strong> {hospital.phone}</p>

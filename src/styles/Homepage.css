@@ -1,8 +1,14 @@
 .home-container {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 50px 20px;
     text-align: center;
+    height: 90vh; /* Set height to full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(86, 160, 192, 0.8); /* White background with 80% opacity */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3), 0px -10px 20px rgba(255, 255, 255, 0.5); /* Dual box shadow with upper part darker and lower part lighter */
 }
 
 .options {
@@ -12,13 +18,13 @@
 }
 
 .option {
-    flex-basis: 30%; /* Adjust as needed */
+    flex-basis: 20%; /* Adjust as needed */
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #719be0; /* Blusish background color */
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
-
 .option a {
     text-decoration: none;
     color: #333;
@@ -27,8 +33,7 @@
 }
 
 .option:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
+    background-color: #8ab7f0; /* Lighter shade when hovered */
 }
 
 .option:hover a {
