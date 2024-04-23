@@ -14,7 +14,9 @@ function RegistrationForm() {
         blood: '',
         address: '',
         emergencyP: '',
-        emergencycont: ''
+        emergencycont: '',
+        Disease:'',
+        Allergies:''
     });
     const [error, setError] = useState('');
     const [userId, setUserId] = useState(null); // State to store user ID
@@ -100,6 +102,15 @@ function RegistrationForm() {
                 <div className="form-group">
                     <label htmlFor="emergencycont">Emergency Contact Number:</label>
                     <input type="tel" id="emergencycont" name="emergencycont" value={formData.emergencycont} onChange={handleChange} />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="Disease">Common Disease:</label>
+                    <input type="text" id="Disease" name="Disease" value={formData.Disease} onChange={handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="Allergies">Allergies</label>
+                    <input type="text" id="Allergies" name="Allergies" value={formData.Allergies} onChange={handleChange} />
                 </div>
                 <button type="submit" className="register-btn">Register</button>
             </form>

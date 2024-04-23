@@ -49,7 +49,7 @@ function AdminLoginPage() {
 
         </div>
 
-            <div className="registration-link">
+        <div className="registration-link">
                 <p>Don't have an account? <Link to="/registration">Register here</Link></p>
             </div>
 

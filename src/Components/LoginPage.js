@@ -28,31 +28,36 @@ function LoginPage() {
             }
         }
     };
-
     return (
         <div>
 
-        <div className="login-container">
-            <form onSubmit={handleLogin} className="login-form">
-                <h2>Login</h2>
-                {error && <div className="error-message">{error}</div>}
-                <div className="form-group">
-                    <label htmlFor="userId">User ID</label>
-                    <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button type="submit" className="login-btn">Login</button>
-            </form>
-
-        </div>
-
-            <div className="registration-link">
-                <p>Don't have an account? <Link to="/registration">Register here</Link></p>
+    <div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle medium shade4"></div>
+        <div class="circle small shade5"></div>
+      </div>
+            <div className="login-container">
+                <form onSubmit={handleLogin} className="login-form">
+                    <h2>Patient Login</h2>
+                    {error && <div className="error-message">{error}</div>}
+                    <div className="form-group">
+                        <label htmlFor="userId">Patient  ID</label>
+                        <input type="text" id="userId" value={userId} onChange={(e) => setUserId(e.target.value)} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <button type="submit" className="login-btn">Login</button>
+                </form>
             </div>
 
+            <div>
+                <p>Don't have an account? <Link to="/registration">Register here</Link></p>
+
+            </div>
         </div>
     );
 }

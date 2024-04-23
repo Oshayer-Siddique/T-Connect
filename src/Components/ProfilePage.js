@@ -34,7 +34,7 @@ function ProfilePage() {
                 {error && <div className="error-message">{error}</div>}
                 {user && (
                     <div className="user-profile">
-                        <h2>User Profile</h2>
+                        <h2>Patient Profile</h2>
                         <p><strong>Name:</strong> {user.name}</p>
                         <p><strong>Email:</strong> {user.email}</p>
                         <p><strong>Username:</strong> {user.username}</p>
@@ -45,6 +45,9 @@ function ProfilePage() {
                         <p><strong>Address:</strong> {user.address}</p>
                         <p><strong>Emergency Contact Person:</strong> {user.emergencyP}</p>
                         <p><strong>Emergency Contact Number:</strong> {user.emergencycont}</p>
+                        <p><strong>Diseases:</strong> {user.Disease}</p>
+                        <p><strong>Allergies:</strong> {user.Allergies}</p>
+
                     </div>
                 )}
             </div>
